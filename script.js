@@ -1,10 +1,14 @@
 const forward = document.getElementById("forward");
 const previous = document.getElementById("previous");
+
+// div that the content will be placed
 const container = document.getElementById("card");
+
 var currentPosition = 0;
 
 console.log(container);
 
+// seed data
 const data = [
   {
     name: "Tanya Sinclair",
@@ -20,6 +24,8 @@ const data = [
   },
 ];
 
+
+// will assemble the card on the container div
 function assembleCard(position) {
   const { name, profission, testimonial, photo } = data[position];
   container.classList.add("fadeIn")
@@ -38,9 +44,12 @@ function assembleCard(position) {
   `;
 }
 
+// removing the animation after 1 iteration
 container.addEventListener("animationiteration",()=>{
     container.classList.remove("fadeIn")
 })
+
+// defining the click functions for the buttons of the slider
 
 forward.addEventListener("click", function () {
   if (currentPosition == data.length - 1) {
@@ -61,5 +70,7 @@ previous.addEventListener("click", function () {
     assembleCard(currentPosition);
   }
 });
+
+// assemble the default card
 
 assembleCard(currentPosition)
