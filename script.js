@@ -30,7 +30,7 @@ function assembleCard(position) {
   const { name, profission, testimonial, photo } = data[position];
   container.classList.add("fadeIn")
   container.innerHTML = `
-  <image class="photo" src="${photo}"></image>
+  <image alt="photo coder" class="photo" src="${photo}"></image>
   <div class="description">  
   <div class="testimonial">
         ${testimonial}
